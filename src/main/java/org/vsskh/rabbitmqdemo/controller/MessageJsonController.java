@@ -11,7 +11,7 @@ import org.vsskh.rabbitmqdemo.service.RabbitMQJsonProducer;
 @RestController
 @RequestMapping("/api/v1")
 public class MessageJsonController {
-    private RabbitMQJsonProducer rabbitMQJsonProducer;
+    private final RabbitMQJsonProducer rabbitMQJsonProducer;
     public MessageJsonController(RabbitMQJsonProducer rabbitMQJsonProducer) {
         this.rabbitMQJsonProducer = rabbitMQJsonProducer;
     }

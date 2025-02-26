@@ -5,10 +5,7 @@ import org.slf4j.LoggerFactory;
 import org.springframework.amqp.rabbit.core.RabbitTemplate;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
-import org.vsskh.rabbitmqdemo.model.Invoice;
 import org.vsskh.rabbitmqdemo.model.User;
-
-import java.util.List;
 
 @Service
 public class RabbitMQJsonProducer {
@@ -17,7 +14,7 @@ public class RabbitMQJsonProducer {
     private String routingJsonKey;
     @Value("${rabbitmq.queue.exchange}")
     private String queueExchange;
-    private RabbitTemplate rabbitTemplate;
+    private final RabbitTemplate rabbitTemplate;
     RabbitMQJsonProducer(RabbitTemplate rabbitTemplate) {
         this.rabbitTemplate = rabbitTemplate;
     }
